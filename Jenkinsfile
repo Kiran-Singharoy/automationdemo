@@ -45,9 +45,10 @@ steps {
     }
 
     stage('Stash changes') {
+      steps{
         stash allowEmpty: true, includes: 'bundle.tar.gz', name: 'buildArtifacts'
     }
-  
+    }
 }
 }
  

@@ -3,11 +3,11 @@ agent{ label "NodeJS" }
 
 stages{
   
-/*  stage('Clean Workspace'){
+stage('Clean Workspace'){
  steps {
         cleanWs()
       }
-	  }*/
+	  }
 
  stage('Git Checkout'){
 steps {
@@ -30,12 +30,24 @@ steps {
        
     }
   }
-  stage('checking'){
-    steps{
-      sh 'cd /opt/jenkins'
-      sh 'touch eai.txt'
+  stage('Package Build'){
+    steps
+    {
+        sh "tar -zcvf bundle.tar.gz dist/automationdemo/"
     }
   }
+    stage('Artifacts Creation') {
+      steps{
+        fingerprint 'bundle.tar.gz'
+        archiveArtifacts 'bundle.tar.gz'
+        echo "Artifacts created"
+        }
+    }
+
+    stage('Stash changes') {
+        stash allowEmpty: true, includes: 'bundle.tar.gz', name: 'buildArtifacts'
+    }
+  
 }
 }
  

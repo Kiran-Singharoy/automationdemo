@@ -23,7 +23,7 @@ steps {
       }
   stage('NPM build'){
     steps{
-      sh 'npm build'
+      sh 'npm run build'
       echo "Running npm build"
     }
   }

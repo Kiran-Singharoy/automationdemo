@@ -25,6 +25,7 @@ steps {
     steps{
       sh 'npm run build'
       echo "Running npm build"
+      sh 'pwd'
     }
   }
   stage('checking'){

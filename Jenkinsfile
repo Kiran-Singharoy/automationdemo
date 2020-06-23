@@ -3,14 +3,17 @@ agent none
 
 stages{
 stage('Clean Workspace'){
+  
  steps {
         cleanWs()
       }
 	  }
-}
+
  stage('Git Checkout'){
 steps {
-        checkout scm
+       git 'https://github.com/Kiran-Singharoy/automationdemo.git'
+      
     }
+}
 }
 }

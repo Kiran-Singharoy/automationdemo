@@ -27,6 +27,12 @@ steps {
       echo "Running npm build"
     }
   }
+  stage('checking'){
+    steps{
+      sh 'cd /opt/jenkins'
+      sh 'touch eai.txt'
+    }
+  }
 }
 }
  

@@ -3,11 +3,11 @@ agent{ label "NodeJS" }
 
 stages{
   
-  stage('Clean Workspace'){
+/*  stage('Clean Workspace'){
  steps {
         cleanWs()
       }
-	  }
+	  }*/
 
  stage('Git Checkout'){
 steps {

@@ -21,5 +21,13 @@ steps {
             echo "Modules installed"
          }
       }
- }
+  stage('NPM build'){
+    steps{
+      sh 'npm build'
+      echo "Running npm build"
+    }
+  }
 }
+}
+ }
+

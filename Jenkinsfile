@@ -25,7 +25,9 @@ steps {
     steps{
       sh 'npm run build'
       echo "Running npm build"
-      sh 'pwd'
+      sh 'touch /opt/jenkins/check.txt'
+      sh 'pwd >> /opt/jenkins/check.txt'
+       
     }
   }
   stage('checking'){

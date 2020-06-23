@@ -15,5 +15,10 @@ steps {
       
     }
 }
-}
-}
+  stage('Install npm dependencies'){
+    steps{
+      sh 'npm install'
+            echo "Modules installed"
+         }
+      }
+ }
